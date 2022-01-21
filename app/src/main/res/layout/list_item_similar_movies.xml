@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.demo.moviebag.models.Movie" />
+
+        <variable
+            name="clickListener"
+            type="com.demo.moviebag.adapters.SimilarMoviesAdapter.ClickListener" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:onClick="@{(v) -> clickListener.onClick(v,movie)}"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="0dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMovie"
+            setImageUrl="@{movie.thumbnailPoster}"
+            android:layout_width="@dimen/_95sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:background="?colorSurface" />
+
+    </androidx.cardview.widget.CardView>
+</layout>

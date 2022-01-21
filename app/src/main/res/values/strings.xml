@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MovieBag</string>
+    <string name="home">Home</string>
+    <string name="trending">Trending</string>
+    <string name="see_all">see all…</string>
+    <string name="dummy">At vero eos et accusamus et iusto odio dignissimos ducimus qui bla nditiis praesentium voluptatumd eleniti atque corrupti quos dolore set quas molestias excepturi sint occaecati cupiditate.</string>
+    <string name="cast">Cast</string>
+    <string name="review">Reviews</string>
+    <string name="retry">Retry</string>
+    <string name="language_str">Language: %s</string>
+    <string name="release_date_str">Release Date: %s</string>
+    <string name="release_status">Release Status</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="production_house">Production House</string>
+    <string name="similar_movies">Similar Movies</string>
+    <string name="all">All</string>
+
+
+</resources>

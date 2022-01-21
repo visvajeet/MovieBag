@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="cast"
+            type="com.demo.moviebag.models.Cast" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivProfileImage"
+            setImageUrl="@{cast.image}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_125sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="?colorSurface"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CornerRoundedImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@{cast.name}"
+            android:textAppearance="@style/TextStyleSemiBold"
+            android:textColor="?colorOnBackground"
+            android:textSize="@dimen/_12sdp"
+            tools:text="Name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:alpha="0.5"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@{cast.knownForDepartment}"
+            android:textAppearance="@style/TextStyleMedium"
+            android:textColor="?colorOnBackground"
+            android:textSize="@dimen/_10sdp"
+            tools:text="Director" />
+    </LinearLayout>
+</layout>

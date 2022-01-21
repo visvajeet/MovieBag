@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="review"
+            type="com.demo.moviebag.models.Review" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivProfileImage"
+            setImageUrl="@{review.image}"
+            android:layout_width="@dimen/_78sdp"
+            android:layout_height="@dimen/_78sdp"
+            android:background="?colorSurface"
+            app:shapeAppearanceOverlay="@style/CircleImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@{review.author}"
+            android:textAppearance="@style/TextStyleSemiBold"
+            android:textColor="?colorOnBackground"
+            android:textSize="@dimen/_14sdp"
+            tools:text="Name" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingBar"
+            style="@style/RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:rating="@{review.rating}"
+            android:scaleX="1.6"
+            android:scaleY="1.6"
+            android:transformPivotX="@null"
+            android:transformPivotY="@null" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:alpha="0.5"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@{review.formattedDate}"
+            android:textAppearance="@style/TextStyleMedium"
+            android:textColor="?colorOnBackground"
+            android:textSize="@dimen/_12sdp"
+            tools:text="21-02-2020" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:alpha="0.5"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@{review.content}"
+            android:textAppearance="@style/TextStyleMedium"
+            android:textColor="?colorOnBackground"
+            android:textSize="@dimen/_12sdp"
+            tools:text="@string/dummy" />
+
+        <View
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:alpha="0.1"
+            android:background="@drawable/divider" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.MovieBag" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="backgroundColor">@android:color/white</item>
+        <item name="colorOnBackground">@color/blue_dark</item>
+        <item name="colorSecondary">@color/blue</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorSurface">@color/blue_alpha</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+
+
+</resources>
+

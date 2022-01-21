@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="productionCompanies"
+            type="com.demo.moviebag.models.ProductionCompanies" />
+
+    </data>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        setImageUrl="@{productionCompanies.image}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="?colorSurface"
+        android:maxWidth="@dimen/_100sdp"
+        android:maxHeight="@dimen/_50sdp"
+        android:minWidth="@dimen/_50sdp"
+        android:minHeight="@dimen/_50sdp">
+
+    </androidx.appcompat.widget.AppCompatImageView>
+</layout>
