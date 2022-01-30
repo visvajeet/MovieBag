@@ -14,6 +14,9 @@
     <string name="production_house">Production House</string>
     <string name="similar_movies">Similar Movies</string>
     <string name="all">All</string>
+    <string name="type_str">Type: %s</string>
+    <string name="search">Search</string>
+    <string name="media">Media</string>
 
 
 </resources>

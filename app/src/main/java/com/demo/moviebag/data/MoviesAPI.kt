@@ -1,9 +1,6 @@
 package com.demo.moviebag.data
 
-import com.demo.moviebag.models.CastResponse
-import com.demo.moviebag.models.Movie
-import com.demo.moviebag.models.MovieListResponse
-import com.demo.moviebag.models.ReviewsResponse
+import com.demo.moviebag.models.*
 import com.demo.moviebag.utils.Constants.API_KEY
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -47,6 +44,22 @@ interface MoviesAPI {
         @Query("page") page: Int = 1,
 
         ): ReviewsResponse
+
+    @GET("3/search/multi")
+    suspend fun search(
+        @Query("query") query: String,
+        @Query("api_key") key: String = API_KEY,
+        @Query("page") page: Int = 1,
+
+        ): SearchResponse
+
+    @GET("3/{type}/{id}/images")
+    suspend fun getMedia(
+        @Path("type") type: String,
+        @Path("id") id: String,
+        @Query("api_key") key: String = API_KEY,
+
+        ): Media
 
 
 }

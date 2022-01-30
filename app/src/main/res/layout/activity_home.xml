@@ -24,16 +24,33 @@
                 app:layout_scrollFlags="scroll"
                 tools:context=".ui.HomeActivity">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_15sdp"
-                    android:text="@string/home"
-                    android:textAppearance="@style/TextStyleBold"
-                    android:textColor="?colorOnBackground"
-                    android:textSize="@dimen/_17sdp" />
+              <LinearLayout
+                  android:gravity="center"
+                  android:layout_marginStart="@dimen/_15sdp"
+                  android:layout_marginTop="@dimen/_20sdp"
+                  android:layout_marginEnd="@dimen/_15sdp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+                  <androidx.appcompat.widget.AppCompatTextView
+                      android:layout_weight="1"
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:text="@string/home"
+                      android:textAppearance="@style/TextStyleBold"
+                      android:textColor="?colorOnBackground"
+                      android:textSize="@dimen/_17sdp" />
+
+                  <androidx.appcompat.widget.AppCompatImageView
+                      android:id="@+id/ivSearch"
+                      android:tint="?colorOnBackground"
+                      android:padding="@dimen/_5sdp"
+                      android:background="@drawable/click_ripple_effect"
+                      app:srcCompat="@drawable/search"
+                      android:layout_width="@dimen/_30sdp"
+                      android:layout_height="@dimen/_30sdp"/>
+
+              </LinearLayout>
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/vpMovies"

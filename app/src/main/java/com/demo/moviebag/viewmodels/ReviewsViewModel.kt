@@ -12,6 +12,7 @@ import java.io.IOException
 
 class ReviewsViewModel(private val state: SavedStateHandle) : ViewModel() {
 
+
     private var getDataJob: Job? = null
 
     private val _reviews = MutableLiveData<Resource<ReviewsResponse>>()

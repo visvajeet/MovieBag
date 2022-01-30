@@ -226,6 +226,7 @@
 
 
                         <com.google.android.material.button.MaterialButton
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:id="@+id/btCast"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -237,17 +238,17 @@
                             android:textAppearance="@style/TextStyleMedium"
                             android:textSize="@dimen/_12sdp"
                             app:cornerRadius="@dimen/_8sdp"
-                            app:layout_constraintEnd_toStartOf="@+id/btReview"
+                            app:layout_constraintEnd_toStartOf="@+id/btMedia"
                             app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toStartOf="@+id/productionHouseHeading"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/rvProductionHouse" />
 
                         <com.google.android.material.button.MaterialButton
+                            android:layout_marginEnd="@dimen/_10sdp"
                             android:id="@+id/btReview"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_15sdp"
-                            android:layout_marginEnd="@dimen/_15sdp"
                             android:paddingTop="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:text="@string/review"
@@ -257,6 +258,24 @@
                             app:cornerRadius="@dimen/_8sdp"
                             app:layout_constraintBottom_toBottomOf="@+id/btCast"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/btMedia"
+                            app:layout_constraintTop_toTopOf="@+id/btCast" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btMedia"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:text="@string/media"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextStyleMedium"
+                            android:textSize="@dimen/_12sdp"
+                            app:cornerRadius="@dimen/_8sdp"
+                            app:layout_constraintEnd_toStartOf="@+id/btReview"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toEndOf="@+id/btCast"
                             app:layout_constraintTop_toTopOf="@+id/btCast" />

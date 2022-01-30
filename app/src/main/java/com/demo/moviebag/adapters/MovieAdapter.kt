@@ -13,9 +13,7 @@ class MovieAdapter(private val clickListener: ClickListener) :
     PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(MovieDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        return MovieViewHolder(ListItemMovieBinding.inflate(LayoutInflater.from(parent.context),
-            parent,
-            false))
+        return MovieViewHolder(ListItemMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {

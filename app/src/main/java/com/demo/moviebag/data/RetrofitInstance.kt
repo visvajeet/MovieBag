@@ -1,5 +1,6 @@
 package com.demo.moviebag.data
 
+import android.app.Activity
 import com.demo.moviebag.utils.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -27,4 +28,9 @@ object RetrofitInstance {
     val moviesAPI: MoviesAPI by lazy {
         retrofit.create(MoviesAPI::class.java)
     }
+
+
+
+
+
 }

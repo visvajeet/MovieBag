@@ -44,7 +44,7 @@ class CastActivity : AppCompatActivity() {
 
     private fun observeMovieData() {
 
-        castViewModel.cast.observe(this, {
+        castViewModel.cast.observe(this) {
 
             when (it) {
                 is Resource.Success -> {
@@ -56,7 +56,7 @@ class CastActivity : AppCompatActivity() {
                 }
                 else -> {}
             }
-        })
+        }
 
     }
 }

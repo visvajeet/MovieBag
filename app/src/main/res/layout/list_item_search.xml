@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="search"
+            type="com.demo.moviebag.models.Search" />
+
+        <variable
+            name="clickListener"
+            type="com.demo.moviebag.adapters.SearchAdapter.ClickListener" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+
+            app:cardBackgroundColor="?colorSurface"
+            app:cardCornerRadius="@dimen/_12sdp"
+            app:cardElevation="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/click_ripple_effect"
+                android:onClick="@{(v) -> clickListener.onClick(v,search)}"
+                android:padding="@dimen/_12sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvMovieImage"
+                    android:layout_width="@dimen/_85sdp"
+                    android:layout_height="@dimen/_115sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    app:cardCornerRadius="@dimen/_12sdp"
+                    app:cardElevation="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivMovie"
+                        setImageUrl="@{search.thumbnailPoster}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:ellipsize="end"
+                    android:text="@{search.name}"
+                    android:textAppearance="@style/TextStyleSemiBold"
+                    android:textColor="?colorOnSurface"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvLanguage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/cvMovieImage"
+                    app:layout_constraintTop_toTopOf="@+id/cvMovieImage"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Movie Name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLanguage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:alpha="0.5"
+                    android:text="@{@string/language_str(search.formattedLanguage)}"
+                    android:textAppearance="@style/TextStyleMedium"
+                    android:textColor="?colorOnSurface"
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvReleaseDate"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                    tools:text="Language: English" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReleaseDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:alpha="0.5"
+                    android:text="@{@string/type_str(search.mediaType)}"
+                    android:textAppearance="@style/TextStyleMedium"
+                    android:textColor="?colorOnSurface"
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cvMovieImage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLanguage"
+                    tools:text="Release Date: June 1" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+</layout>

@@ -25,6 +25,8 @@
             android:name=".ui.MovieDetailActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.ReviewsActivity" android:screenOrientation="portrait" />
         <activity android:name=".ui.CastActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.SearchActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.MediaActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

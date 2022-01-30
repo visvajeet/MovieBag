@@ -13,6 +13,7 @@ import com.demo.moviebag.viewmodels.ReviewsViewModel
 
 class ReviewsActivity : AppCompatActivity() {
 
+
     lateinit var binding: ActivityReviewsBinding
     private val reviewAdapter by lazy { ReviewAdapter() }
 

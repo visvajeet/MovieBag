@@ -27,7 +27,6 @@ class HomeActivity : AppCompatActivity() {
 
     private val viewModel: HomeViewModel by viewModels()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,6 +38,9 @@ class HomeActivity : AppCompatActivity() {
 
         binding.srl.setOnRefreshListener {
             movieAdapter.refresh()
+        }
+        binding.ivSearch.setOnClickListener {
+            openSearchActivity()
         }
 
     }
@@ -98,6 +100,11 @@ class HomeActivity : AppCompatActivity() {
 
     private val bannerClickListener = BannerAdapter.ClickListener { _: View, movie: Movie ->
         openMovieDetailActivity(movie.id.toString())
+    }
+
+    private fun openSearchActivity() {
+        val i = Intent(this, SearchActivity::class.java)
+        startActivity(i)
     }
 
     private fun openMovieDetailActivity(id: String) {

@@ -10,21 +10,15 @@ import com.demo.moviebag.R
 import com.demo.moviebag.databinding.ListItemLoadingAndRetryBinding
 
 
-class ListLoadStateAdapter(private val retry: () -> Unit) :
-    LoadStateAdapter<LoadStateViewHolder>() {
+class ListLoadStateAdapter(private val retry: () -> Unit) : LoadStateAdapter<LoadStateViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState) =
-        LoadStateViewHolder(parent, retry)
+    override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState) = LoadStateViewHolder(parent, retry)
 
-    override fun onBindViewHolder(
-        holder: LoadStateViewHolder,
-        loadState: LoadState,
-    ) = holder.bind(loadState)
+    override fun onBindViewHolder(holder: LoadStateViewHolder, loadState: LoadState, ) = holder.bind(loadState)
 }
 
 class LoadStateViewHolder(parent: ViewGroup, retry: () -> Unit) : RecyclerView.ViewHolder(
-    LayoutInflater.from(parent.context)
-        .inflate(R.layout.list_item_loading_and_retry, parent, false)
+    LayoutInflater.from(parent.context).inflate(R.layout.list_item_loading_and_retry, parent, false)
 ) {
     private val binding = ListItemLoadingAndRetryBinding.bind(itemView).also {
         it.btRetry.setOnClickListener { retry() }

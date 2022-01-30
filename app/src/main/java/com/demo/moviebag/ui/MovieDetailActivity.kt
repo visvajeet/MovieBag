@@ -10,9 +10,11 @@ import com.demo.moviebag.R
 import com.demo.moviebag.adapters.ProductionCompaniesAdapter
 import com.demo.moviebag.adapters.SimilarMoviesAdapter
 import com.demo.moviebag.databinding.ActivityMovieDetailsBinding
+import com.demo.moviebag.models.MediaQuery
 import com.demo.moviebag.models.Movie
 import com.demo.moviebag.models.MovieWithSimilarMovies
 import com.demo.moviebag.utils.Constants
+import com.demo.moviebag.utils.Constants.MEDIA_QUERY_DATA
 import com.demo.moviebag.utils.Resource
 import com.demo.moviebag.utils.showToast
 import com.demo.moviebag.viewmodels.MovieDetailViewModel
@@ -45,6 +47,10 @@ class MovieDetailActivity : AppCompatActivity() {
             openCastActivity()
         }
 
+        binding.btMedia.setOnClickListener {
+            openMediaActivity()
+        }
+
         binding.btReview.setOnClickListener {
             openReviewsActivity()
         }
@@ -62,6 +68,15 @@ class MovieDetailActivity : AppCompatActivity() {
     private fun openCastActivity() {
         val i = Intent(this, CastActivity::class.java)
         i.putExtra(Constants.MOVIE_ID, viewModel.movieId)
+        startActivity(i)
+    }
+
+    private fun openMediaActivity() {
+
+
+        val i = Intent(this, MediaActivity::class.java)
+        val mediaQuery = MediaQuery(type = viewModel.type?:"movie", id = viewModel.movieId)
+        i.putExtra(MEDIA_QUERY_DATA, mediaQuery)
         startActivity(i)
     }
 
@@ -86,7 +101,7 @@ class MovieDetailActivity : AppCompatActivity() {
 
     private fun observeMovieData() {
 
-        viewModel.movieData.observe(this, {
+        viewModel.movieData.observe(this) {
 
             when (it) {
                 is Resource.Success -> {
@@ -98,7 +113,7 @@ class MovieDetailActivity : AppCompatActivity() {
                 }
                 else -> {}
             }
-        })
+        }
 
     }
 
@@ -112,7 +127,6 @@ class MovieDetailActivity : AppCompatActivity() {
         productionCompaniesAdapter.submitList(it.movie.productionCompanies)
 
     }
-
 
     private fun setAdapters() {
 

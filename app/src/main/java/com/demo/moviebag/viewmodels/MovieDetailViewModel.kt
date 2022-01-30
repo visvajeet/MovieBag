@@ -1,9 +1,11 @@
 package com.demo.moviebag.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.demo.moviebag.data.RetrofitInstance
 import com.demo.moviebag.models.MovieWithSimilarMovies
 import com.demo.moviebag.utils.Constants.MOVIE_ID
+import com.demo.moviebag.utils.Constants.TYPE
 import com.demo.moviebag.utils.Resource
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
@@ -16,6 +18,8 @@ class MovieDetailViewModel(private val state: SavedStateHandle) : ViewModel() {
     private var getDataJob: Job? = null
 
     val movieId = state.get<String>(MOVIE_ID).toString()
+    val type = state.get<String>(TYPE)
+
 
     private val _movieData = MutableLiveData<Resource<MovieWithSimilarMovies>>()
     val movieData = _movieData
@@ -33,6 +37,8 @@ class MovieDetailViewModel(private val state: SavedStateHandle) : ViewModel() {
     }
 
     private fun getData() {
+
+
 
         getDataJob?.cancel()
         getDataJob = viewModelScope.launch {

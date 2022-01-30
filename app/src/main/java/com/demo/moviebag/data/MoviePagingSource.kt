@@ -23,7 +23,7 @@ class MoviePagingSource(
             LoadResult.Page(
                 data = response.results,
                 prevKey = if (pageIndex == STARTING_PAGE) null else pageIndex - 1,
-                nextKey = if (pageIndex == response.totalResults) null else pageIndex + 1
+                nextKey = if (pageIndex == response.totalPages) null else pageIndex + 1
             )
 
         } catch (exception: IOException) {
